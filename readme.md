@@ -11,14 +11,14 @@ These practices were following the course list of [FREE Data Analyst Bootcamp!!]
 docker compose up
 ```
 
-2. you can utilize the service by visiting [http://localhost:8080/](http://localhost:8080/)
+2. you can utilize the service by using any database management application, such as phpmyadmin.
 
 3. default database setting will be as below.
 ```
-Database system: PostgreSQL
-Server: postgres
-Account: user
-Password: password
+Database system: MariaDB
+Server: localhost:3306
+Account: root
+Password: root_password
 Database: testdb
 ```
 notice, these information depends on the value you declared in `docker-compose.yml`. If you fail to log in your database, check the settings in your `docker-compose.yml`
