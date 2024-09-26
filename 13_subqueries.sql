@@ -7,6 +7,14 @@ WHERE employee_id IN (SELECT employee_id
                       WHERE dept_id = 1)
 ;
 
+# If you want to let the selected columns from subquery as final output result,
+# You should use the LEFT JOIN solution.
+SELECT dem.*, sal.salary
+FROM employee_demographics AS dem
+LEFT JOIN employee_salary AS sal
+ON dem.employee_id = sal.employee_id
+WHERE sal.dept_id = 1;
+
 # or using "LEFT JOIN" clause
 SELECT *
 FROM employee_demographics
@@ -32,7 +40,7 @@ GROUP BY gender
 SELECT AVG(`MAX(age)`)
 FROM (SELECT gender, AVG(age), MAX(age), MIN(age), COUNT(age)
       FROM employee_demographics
-      GROUP BY gender) AS agg_table
+      GROUP BY gender) AS age_table
 ;
 
 SELECT AVG(max_age)
