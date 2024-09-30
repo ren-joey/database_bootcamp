@@ -4,7 +4,7 @@ USE `Commerce`;
 
 
 CREATE TABLE orders (
-  id INT NOT NULL,
+  id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(50),
   price INT,
   user_id INT
