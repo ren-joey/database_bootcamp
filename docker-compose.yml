@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  mariadb:
+  db_bootcamp_mariadb:
     image: mariadb:latest
-    container_name: mariadb
+    container_name: db_bootcamp_mariadb
     environment:
       MYSQL_DATABASE: testdb
       MYSQL_ROOT_PASSWORD: root_password
@@ -12,8 +12,5 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mariadb_data:/var/lib/mysql
+      - ./db_data:/var/lib/mysql
 
-volumes:
-  mariadb_data:
-    driver: local
